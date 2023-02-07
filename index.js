@@ -4,24 +4,35 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 let generateRandomBtn = document.getElementById('generatePass-btn')
 let renderRandomPass1 = document.getElementById('randomPass1')
 let renderRandomPass2 = document.getElementById('randomPass2')
-
-
+let passwordLengthInput = document.getElementById('passwordCharLengthInput')
+let warning = document.getElementById('passwordLengthWarning')
 
 generateRandomBtn.addEventListener("click", function(){
     let randomIndex1
-    let randomIndex2 = Math.floor(Math.random()*characters.length) 
-    let characterLimit = 0    
+    let randomIndex2 
+    let characterLimit = 0
+    let passwordLength = passwordLengthInput.value
     
     renderRandomPass1.textContent = ''
     renderRandomPass2.textContent = ''
     
-    for(let i=0; i<15; i++){
-        if(characterLimit < 16){
+    for(let i=0; i<passwordLength; i++){
+        if(passwordLength < 8){
+            warning.textContent = "Please input a minimum of 8 characters."
+            document.getElementById('passwordCharLengthInput').style.borderColor = 'red'
+        }
+        else if(passwordLength > 30){
+            warning.textContent = "Please input a maximum of 30 characters."
+            document.getElementById('passwordCharLengthInput').style.borderColor = 'red'
+        }
+        else if(characterLimit < passwordLength && passwordLength > 7){
              randomIndex1 = Math.floor(Math.random()*characters.length) 
              renderRandomPass1.textContent += characters[randomIndex1] 
              randomIndex2 = Math.floor(Math.random()*characters.length) 
              renderRandomPass2.textContent += characters[randomIndex2] 
              characterLimit++
+             warning.textContent = ""
+             document.getElementById('passwordCharLengthInput').style.borderColor = '#10B981'
         }        
     }     
 })

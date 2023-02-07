@@ -23,7 +23,8 @@ body {
     padding: 10px;
     border: 5px solid #273549;
     margin: 0;
-    height: 25px;
+    width: auto;
+    height: auto;
 }
 
 p{
@@ -44,6 +45,7 @@ hr{
 }
 
 button{
+    position: relative;
     font-family: inter;
     color: white;
     background: #10B981;
@@ -56,8 +58,39 @@ button{
     border-radius: 6px;
     font-size: 16px;
     font-weight: 500;
+    margin: 2em 0em 0em 0em;
+}
+
+button:hover{
+    background: transparent;
+    transition-duration: 0.3s;
+}
+
+button:active {
+    top: 2px;
+    box-shadow: 0 0 5px 5px #10B981;
 }
 
 .intro-text{
     margin: 5em 0em 0em 0em;
+}
+
+#passwordCharLengthInput{
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: unset;
+    width: 5%;
+    border: 2px solid #10B981;
+}
+
+/*remove spin button number input*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
 }
