@@ -19,12 +19,12 @@ body {
     background: #273549;
     color: white;
     font-family: 'Inter';
-    width: 320px;
     padding: 10px;
     border: 5px solid #273549;
     margin: 0;
-    width: auto;
+    width: fit-content;
     height: auto;
+    
 }
 
 p{
@@ -93,4 +93,24 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
+}
+
+/*-----------Media Queries (Medium Devices)--------------------*/
+@media screen and (max-width: 1024px){
+    .password{
+        margin-top: 1em;
+    }
+    .password-div{
+        display: grid;
+    }
+}
+
+/*-----------Media Queries (Small Devices)--------------------*/
+@media screen and (max-width: 600px){
+    .password{
+        margin-top: 1em;
+    }
+    .password-div{
+        display: grid;
+    }
 }

@@ -33,6 +33,39 @@ generateRandomBtn.addEventListener("click", function(){
              characterLimit++
              warning.textContent = ""
              document.getElementById('passwordCharLengthInput').style.borderColor = '#10B981'
-        }        
+        }       
+        else{
+            location.reload()
+        }
     }     
 })
+
+function copyPass1(){
+    let copyText = document.getElementById('randomPass1')
+    let textToCopy = copyText.textContent
+
+    if(textToCopy === ''){
+        console.log('Warning: No text')
+    }
+    else{
+        copy(textToCopy)
+        alert("Copied the text: " + textToCopy)
+    }
+}
+
+function copyPass2(){
+    let copyText = document.getElementById('randomPass2')
+    let textToCopy = copyText.textContent
+
+    if(textToCopy === ''){
+        console.log('Warning: No text')
+    }
+    else{
+        copy(textToCopy)
+        alert("Copied the text: " + textToCopy)
+    }
+}
+
+function copy(text){
+    navigator.clipboard.writeText(text)
+}
