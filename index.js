@@ -12,6 +12,7 @@ generateRandomBtn.addEventListener("click", function(){
     let randomIndex2 
     let characterLimit = 0
     let passwordLength = passwordLengthInput.value
+    let toggleNumberCheckbox = document.getElementById('toggleNumberCheckbox')
     
     renderRandomPass1.textContent = ''
     renderRandomPass2.textContent = ''
@@ -34,9 +35,6 @@ generateRandomBtn.addEventListener("click", function(){
              warning.textContent = ""
              document.getElementById('passwordCharLengthInput').style.borderColor = '#10B981'
         }       
-        else{
-            location.reload()
-        }
     }     
 })
 
